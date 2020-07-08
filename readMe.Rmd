@@ -1,0 +1,17 @@
+---
+title: "ReadMe"
+author: "Jerome Cordjotse"
+date: "7/8/2020"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages('plotly')
+library(plotly)
+```
+
+# Intro
+A web graph showing covid cases across a period of 90 days.
+
+find [link here](https://jeromecordjotse.github.io/Covid/)

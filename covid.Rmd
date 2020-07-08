@@ -1,0 +1,32 @@
+---
+title: "Covid"
+author: "Jerome Cordjotse"
+date: "7/8/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, cache=TRUE, echo=FALSE, message=FALSE}
+install.packages('plotly')
+library(plotly)
+cases <- read.csv('data/covid.csv')
+ma <- function(x, n = 5){stats::filter(x, rep(1 / n, n), sides = 2)}
+cases_ma <- ma(cases$Daily, n=7)
+cases_ma[is.na(cases_ma)] <- 0
+cases <- cases %>% mutate( MA_7Days = cases_ma)
+
+```
+
+
+# COVID-19 Daily Cases with 7 Day Moving Average
+
+```{r, echo=FALSE, warning=FALSE, cache=TRUE}
+plot_ly(cases, x = ~ Days) %>%
+    add_lines(y=~Daily, name="Daily") %>%
+    add_lines(y=~MA_7Days, name = "Day MA")
+```
+
+# Thank You
