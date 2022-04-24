@@ -7,4 +7,4 @@ Jerome Cordjotse
 
 A web graph showing covid cases across a period of 90 days.
 
-find [link here](https://jeromecordjotse.github.io/Covid/)
+find [link here](https://jecordjotse.github.io/Dev_Data_proj_2/covid.html)
